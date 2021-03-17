@@ -4,4 +4,4 @@ CRA Template including:
 - Redux set-up with exemple files (Reducer, action, middleware, container)
 - Eslint configuration using AirBnB config
 - Scss with reset file
-- PropTypes, react-router-dom, axios
+- PropTypes, React-router-dom, axios

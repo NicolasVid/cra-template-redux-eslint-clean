@@ -1,14 +1,47 @@
 {
   "name": "cra-template-redux-eslint-clean",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.2",
+  "author": "Nicolas Vidale, inspired by a model from O'Clock (https://oclock.io)",
+  "description": "A quick start Create React App template with Redux, Eslint (AirBnB) and SaSS",
+  "main": "template.json",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NicolasVid/cra-template-redux-eslint-clean"
+  },
+  "files": [
+    "template",
+    "template.json"
+  ],
+  "keywords": [
+    "react",
+    "create-react-app",
+    "cra-template",
+    "template",
+    "eslint",
+    "redux",
+    "react-redux",
+    "react-router-dom",
+    "axios",
+    "airbnb",
+    "sass",
+    "scss"
+  ],
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.21.1",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "node-sass": "^5.0.0",
+    "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "redux": "^4.0.5",
     "web-vitals": "^1.0.1"
@@ -17,7 +50,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "clean-files": "rm -rf ./template/public ./template/src && rm -f ./template/.eslintignore ./template/.eslintrc ./template/README.md",
+    "copy-files": "cp -a ./src/. template/src && cp -a ./public/. template/public && cp .eslintignore .eslintrc README.md template/",
+    "prepublishOnly": "yarn clean-files && yarn copy-files"
   },
   "eslintConfig": {
     "extends": [
@@ -36,5 +72,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^7.22.0",
+    "eslint-plugin-react": "^7.22.0"
   }
 }
